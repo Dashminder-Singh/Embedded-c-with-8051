@@ -1,0 +1,52 @@
+C51 COMPILER V8.08   S2                                                                    02/06/2020 13:20:53 PAGE 1   
+
+
+C51 COMPILER V8.08, COMPILATION OF MODULE S2
+OBJECT MODULE PLACED IN s2.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE s2.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg51.h>
+   2          sbit X1=P3^2;
+   3          sbit X2=P3^3;
+   4          sbit X3=P3^4;
+   5          sbit X4=P3^5;
+   6          char arr[4]={0xbf,0x86,0xdb,0xcf};
+   7          void mydelay(int t)
+   8          {
+   9   1         int x,y;
+  10   1         for (x=0 ; x<t; x++)
+  11   1         {  
+  12   2                      for (y=0 ; y<200; y++)
+  13   2                      {
+  14   3                      }               
+  15   2         }
+  16   1      }
+  17          void main()
+  18          {       
+  19   1        X1=X2=X3=X4=0;
+  20   1        while(1)
+  21   1        {
+  22   2              X1=1;
+  23   2              P0=arr[0]; mydelay(400);
+  24   2              P0=arr[1]; mydelay(400);
+  25   2              P0=arr[2]; mydelay(400);
+  26   2              P0=arr[3]; mydelay(400);
+  27   2      
+  28   2        }
+  29   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     78    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

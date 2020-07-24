@@ -1,0 +1,48 @@
+C51 COMPILER V8.08   P1                                                                    02/04/2020 21:31:06 PAGE 1   
+
+
+C51 COMPILER V8.08, COMPILATION OF MODULE P1
+OBJECT MODULE PLACED IN p1.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE p1.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg51.h>
+   2          void my_delay()
+   3          {       int i,j; 
+   4   1              // increment value of i in a loop
+   5   1      
+   6   1              for (j=0; j<30000 ; j++) 
+   7   1              { 
+   8   2              }
+   9   1      
+  10   1      }
+*** WARNING C280 IN LINE 3 OF P1.C: 'i': unreferenced local variable
+  11          void main()
+  12          {
+  13   1              while(1){
+  14   2                      P1= 0x55; //0101 0101->    0x55
+  15   2                      my_delay(); // call function
+  16   2                      P1= 0xaa;  //1010 1010->    0xaa
+  17   2                      my_delay(); 
+  18   2              }
+  19   1      }
+  20          
+  21          /* multi line comment
+  22                  P1= 0x00; //0000 0000->    0x00
+  23                  P1= 0xff;  //1111 1111->    0xff
+  24          */ 
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     29    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

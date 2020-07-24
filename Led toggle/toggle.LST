@@ -1,0 +1,113 @@
+C51 COMPILER V8.08   TOGGLE                                                                02/06/2020 12:21:03 PAGE 1   
+
+
+C51 COMPILER V8.08, COMPILATION OF MODULE TOGGLE
+OBJECT MODULE PLACED IN toggle.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE toggle.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          sbit but1 = P2^0;
+   3          int but1status =0 ; 
+   4          
+   5          void my_delay()
+   6          {
+   7   1              int i,j;
+   8   1              
+   9   1              for (j=0;j<3 ;j++){
+  10   2                      for (i=0 ; i<30000 ;i++){
+  11   3                      }
+  12   2              }
+  13   1      }       
+  14          void main()
+  15          {
+  16   1      
+  17   1              while(1){
+  18   2               if (but1==0)
+  19   2               {         // toggle the value of but1status
+  20   3                      if(but1status==0)
+  21   3                      {       but1status=1;
+  22   4                      }else{ 
+  23   4                              but1status=0;    
+  24   4                      }
+  25   3                      while (but1==0){} // wait here till the button is released
+  26   3               }  
+  27   2              if (but1status==0){
+  28   3                // if button on P2.0 pin is pressed display pattern1
+  29   3                      P1=0xf0; my_delay();
+  30   3                      P1=0x0f; my_delay();
+  31   3                }     else{
+  32   3                      P1=0xff; my_delay();
+  33   3                      P1=0x00; my_delay();
+  34   3                }
+  35   2      
+  36   2              }//while end here
+  37   1      
+  38   1       
+  39   1      
+  40   1      
+  41   1       }
+  42          
+  43          
+  44          
+  45          
+  46          
+  47          
+  48          
+  49          
+  50          
+  51          
+  52          
+  53          
+  54          
+  55          
+C51 COMPILER V8.08   TOGGLE                                                                02/06/2020 12:21:03 PAGE 2   
+
+  56          
+  57          
+  58          
+  59          
+  60          
+  61          
+  62          
+  63          
+  64          
+  65          
+  66          
+  67          
+  68          
+  69          /*      P1=0x00;
+  70                  while(1){
+  71                   if (but1==0){
+  72                    // if button on P2.0 pin is pressed display pattern1
+  73                          P1=0xf0; my_delay();
+  74                          P1=0x0f; my_delay();
+  75                    }
+  76                    if (but2==0){
+  77                    // if button on P2.1 pin is pressed display pattern2
+  78                          P1=0x00; my_delay();
+  79                          P1=0xff; my_delay();
+  80                    }
+  81                    if (but3==0){
+  82                    // pattern3
+  83                          P1=0xaa; my_delay();
+  84                          P1=0x55; my_delay();
+  85                    }
+  86                    else { P1=0x00; } // make all LEDs off 
+  87                  }
+  88          }*/
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     87    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

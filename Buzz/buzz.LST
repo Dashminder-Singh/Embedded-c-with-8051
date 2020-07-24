@@ -1,0 +1,48 @@
+C51 COMPILER V8.08   BUZZ                                                                  02/04/2020 21:28:55 PAGE 1   
+
+
+C51 COMPILER V8.08, COMPILATION OF MODULE BUZZ
+OBJECT MODULE PLACED IN buzz.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE buzz.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          sbit buzz=P0^4;
+   3          
+   4          void my_delay(int t)  //parameter passing function
+   5          {
+   6   1              int i,j;
+   7   1              for(j=0;j<t;j++)
+   8   1              {
+   9   2                      for(i=0;i<30000;i++)
+  10   2                      {
+  11   3                      }
+  12   2              }       
+  13   1      
+  14   1      }
+  15                  void main()
+  16                  {
+  17   1                      while(1)
+  18   1                      {       
+  19   2                              buzz=0;
+  20   2                              my_delay(10);
+  21   2                              buzz=1;
+  22   2                              my_delay(2);
+  23   2                      }
+  24   1              }
+  25          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     56    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

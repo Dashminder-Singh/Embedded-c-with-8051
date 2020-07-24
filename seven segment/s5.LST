@@ -1,0 +1,65 @@
+C51 COMPILER V8.08   S5                                                                    02/06/2020 15:21:50 PAGE 1   
+
+
+C51 COMPILER V8.08, COMPILATION OF MODULE S5
+OBJECT MODULE PLACED IN s5.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE s5.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg51.h>
+   2          sbit X1=P3^2;
+   3          sbit X2=P3^3;
+   4          sbit X3=P3^4;
+   5          sbit X4=P3^5;
+   6          char arr[10]={0xbf,0x86,0xdb,0xcf,0xe6,0xed,0xfd,0x87,0xff,0xe7};
+   7          void mydelay(int t)
+   8          {
+   9   1         int x,y;
+  10   1         for (x=0 ; x<t; x++)
+  11   1         {  
+  12   2                      for (y=0 ; y<200; y++)
+  13   2                      {
+  14   3                      }               
+  15   2         }
+  16   1      }
+  17          void main()
+  18          {       
+  19   1        int j,a,b,c,d,i;      
+  20   1        X1=X2=X3=X4=0;
+  21   1        while(1)
+  22   1              {
+  23   2                      for(j=0;j<1000;j++)
+  24   2                      {
+  25   3                              a=j/100;
+  26   3                              b=(j/100)%10;
+  27   3                              c=(j/10)%10;
+  28   3                              d=j%10;
+  29   3                      
+  30   3                              for(i=0;i<50;i++)
+  31   3                              {
+  32   4                                      X1=1; X2=0; X3=0; X4=0;         P0=arr[a]; mydelay(2);
+  33   4                                      X1=0; X2=1; X3=0; X4=0;         P0=arr[b]; mydelay(2);
+  34   4                                      X1=0; X2=0; X3=1; X4=0;         P0=arr[c]; mydelay(2);
+  35   4                                      X1=0; X2=0; X3=0; X4=1;         P0=arr[d]; mydelay(2);
+  36   4                              }                               
+  37   3                      }
+  38   2                              
+  39   2              }
+  40   1      
+  41   1      }
+  42          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    227    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     10      10
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
